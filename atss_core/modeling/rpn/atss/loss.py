@@ -256,7 +256,7 @@ class ATSSLossComputation(object):
             reg_loss = box_regression_flatten.sum()
             iou_pred_loss = iou_pred_flatten.sum()
 
-        return cls_loss, reg_loss * self.cfg.MODEL.ATSS.REG_LOSS_WEIGHT, iou_pred_loss * self.iou_loss_weight
+        return cls_loss, reg_loss * self.cfg.MODEL.ATSS.REG_LOSS_WEIGHT, iou_pred_loss * self.cfg.MODEL.ATSS.IOU_LOSS_WEIGHT
 
 
 def make_atss_loss_evaluator(cfg, box_coder):
